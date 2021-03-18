@@ -1,5 +1,5 @@
-import 'package:estudopolicialweb/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: '@Estudo.policial',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomeScreen());
+        home: HomePage());
   }
 }
