@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: HomePage());
+        
+        home: HomePage())
+        ;
+
   }
 }

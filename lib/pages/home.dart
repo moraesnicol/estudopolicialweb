@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,24 +14,46 @@ class _HomePageState extends State<HomePage> {
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
         child: Container(
-            color: Colors.black87, padding: EdgeInsets.all(20), 
+            color: Colors.black87,
+            padding: EdgeInsets.all(12),
             child: Row(
               children: [
-                Text('GABRIEL'),
                 Expanded(
-                  main
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    
+                    children: [
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Home',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(width: screenSize.width / 50),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Sobre',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(width: screenSize.width / 50),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'Contato',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
                 )
-
-
-
-              ],
-
-
-
-
+              ]
             )
-        ),
+        )
       ),
+      body: Container(),
     );
   }
 }
