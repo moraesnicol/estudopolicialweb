@@ -139,12 +139,12 @@ class _HomePageState extends State<HomePage> {
                 hoverColor: Colors.red,
                 onTap: () {},
                               child: Text(
-                    'Concursos |',
+                    'Editais |',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 35,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black
+                      color: Colors.black87
                     ),
                   ),
               ),
@@ -157,9 +157,9 @@ class _HomePageState extends State<HomePage> {
                     'Mapas Mentais |',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 35,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black
+                      color: Colors.black87
                     ),
                   ),
               ),
@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black
+                      color: Colors.black87
                     ),
                   ),
               ),
