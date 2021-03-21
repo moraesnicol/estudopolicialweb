@@ -6,7 +6,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List _isHovering = [true, false, false, false];
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,9 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
-                          onHover: (value) => {
-                            setState(() {
-                              _isHovering[0] = value;
-                            })
-                          },
+                            highlightColor: Colors.blueAccent,
+                            borderRadius: BorderRadius.circular(1),
+                            hoverColor: Colors.red,
                           onTap: () {},
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -38,32 +36,23 @@ class _HomePageState extends State<HomePage> {
                                 'Home',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: _isHovering[0]
-                                        ? Colors.yellow[600]
-                                        : Colors.white),
+                                    color:  Colors.white
+                                ),
                               ),
                               SizedBox(height: 5),
-                              Visibility(
-                                maintainAnimation: true,
-                                maintainState: true,
-                                maintainSize: true,
-                                visible: _isHovering[0],
-                                child: Container(
+                              Container(
                                   height: 2,
                                   width: 80,
-                                  color: Colors.greenAccent,
+                                  color: Colors.white,
                                 ),
-                              )
                             ],
                           ),
                         ),
                         SizedBox(width: screenSize.width / 50),
                         InkWell(
-                          onHover: (value) => {
-                            setState(() {
-                              _isHovering[0] = value;
-                            })
-                          },
+                          highlightColor: Colors.red,
+                          borderRadius: BorderRadius.circular(1),
+                          hoverColor: Colors.blueAccent,
                           onTap: () {},
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -72,32 +61,23 @@ class _HomePageState extends State<HomePage> {
                                 'Sobre',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: _isHovering[0]
-                                        ? Colors.yellow[600]
-                                        : Colors.white),
+                                    color: Colors.white
+                                  ),
                               ),
                               SizedBox(height: 5),
-                              Visibility(
-                                maintainAnimation: true,
-                                maintainState: true,
-                                maintainSize: true,
-                                visible: _isHovering[0],
-                                child: Container(
+                                Container(
                                   height: 2,
                                   width: 80,
-                                  color: Colors.greenAccent,
+                                  color: Colors.white,
                                 ),
-                              )
                             ],
                           ),
                         ),
                         SizedBox(width: screenSize.width / 50),
                         InkWell(
-                          onHover: (value) => {
-                            setState(() {
-                              _isHovering[0] = value;
-                            })
-                          },
+                          highlightColor: Colors.blueAccent,
+                          borderRadius: BorderRadius.circular(1),
+                          hoverColor: Colors.redAccent,
                           onTap: () {},
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -106,22 +86,16 @@ class _HomePageState extends State<HomePage> {
                                 'Contato',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: _isHovering[0]
-                                        ? Colors.yellow[600]
-                                        : Colors.white),
+                                    color: 
+                                        Colors.white
+                                ),
                               ),
-                              SizedBox(height: 5),
-                              Visibility(
-                                maintainAnimation: true,
-                                maintainState: true,
-                                maintainSize: true,
-                                visible: _isHovering[0],
-                                child: Container(
+                              SizedBox(height: 5), 
+                              Container(
                                   height: 2,
                                   width: 80,
-                                  color: Colors.greenAccent,
-                                ),
-                              )
+                                  color: Colors.white,
+                                ), 
                             ],
                           ),
                         ),
@@ -145,8 +119,75 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-        ],
-      )),
+          Center(
+            heightFactor: 1,
+            child: Padding(
+          padding: EdgeInsets.only(
+            top: screenSize.height * 0.40,
+            left: screenSize.width / 5,
+            right: screenSize.width /5,
+              ), 
+              child: Card(
+                color: Colors.white,
+                child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                highlightColor: Colors.blueAccent,
+                borderRadius: BorderRadius.circular(1),
+                hoverColor: Colors.red,
+                onTap: () {},
+                              child: Text(
+                    'Concursos |',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black
+                    ),
+                  ),
+              ),
+              InkWell(
+                highlightColor: Colors.red,
+                borderRadius: BorderRadius.circular(1),
+                hoverColor: Colors.blueAccent,
+                onTap: () {},
+                              child: Text(
+                    'Mapas Mentais |',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 35,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black
+                    ),
+                  ),
+              ),
+              InkWell(
+                highlightColor: Colors.blueAccent,
+                borderRadius: BorderRadius.circular(1),
+                hoverColor: Colors.red,
+                onTap: () {},
+                              child: Text(
+                    'Como estudar ',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black
+                    ),
+                  ),
+              ),
+            ],
+          ),
+                ),
+              ) 
+            ),
+            
+          ],
+  
+        )
+      ),
     );
   }
 }
