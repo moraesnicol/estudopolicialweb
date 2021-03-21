@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bottom/bottom_bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -180,18 +181,157 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )),
             ),
-            SizedBox(height: screenSize.height, width: screenSize.width),
+            SizedBox(height: screenSize.height * 1.5, width: screenSize.width),
             Positioned(
-              top: 300,
+              top: 345,
               left: 0,
               child: Container(
                 child: SizedBox(
-                  height: screenSize.height,
-                  width: screenSize.width,
-                  child: Container(color: Colors.black87)
+                  height: screenSize.height * 3,
+                  width: screenSize.width * 1,
+                  child: Container(
+                    color: Colors.black87,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/DEPEN.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/PCPA.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/PF.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/PRF.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/PCDF.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/PCRN.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/PMPR.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: screenSize.width / 6,
+                              width: screenSize.width / 4.5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  child: Image.asset(
+                                    '/images/COMBOS.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            )
+            ),
+            SizedBox(
+             height: screenSize.height * 1.5,
+              width: screenSize.width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  BottomBar(),
+                ],
+              )
+              ),
+          
           ],
         ),
       ),
