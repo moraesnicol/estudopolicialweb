@@ -1,5 +1,7 @@
+import 'package:estudopolicialweb/pages/responsive/drawer.dart';
 import 'package:flutter/material.dart';
 import 'bottom/bottom_bar.dart';
+import 'responsive/responsive.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,98 +13,115 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size(screenSize.width, 1000),
-        child: Container(
-            color: Colors.black87,
-            padding: EdgeInsets.all(12),
-            child: Row(
-              children: [
-                Expanded(
+      appBar: ResponsiveWidget.isSmallScreen(context)
+          ? AppBar(
+              // for smaller screen sizes
+              backgroundColor: Colors.black87,
+              elevation: 0,
+              title: Text(
+                '@Estudo.Policial',
+                style: TextStyle(
+                  color: Colors.blueGrey[100],
+                  fontSize: 20,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 3,
+                ),
+              ),
+            )
+          : PreferredSize(
+              preferredSize: Size(screenSize.width, 1000),
+              child: Container(
+                  color: Colors.black87,
+                  padding: EdgeInsets.all(12),
                   child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      InkWell(
-                        highlightColor: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(1),
-                        hoverColor: Colors.red,
-                        onTap: () {},
-                        child: Column(
+                      Expanded(
+                        child: Row(
                           mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              'Home',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  letterSpacing: 2),
+                            InkWell(
+                              highlightColor: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(1),
+                              hoverColor: Colors.red,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Home',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        letterSpacing: 2),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Container(
+                                    height: 2,
+                                    width: 80,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
                             ),
-                            SizedBox(height: 5),
-                            Container(
-                              height: 2,
-                              width: 80,
-                              color: Colors.white,
+                            SizedBox(width: screenSize.width / 50),
+                            InkWell(
+                              highlightColor: Colors.red,
+                              borderRadius: BorderRadius.circular(1),
+                              hoverColor: Colors.blueAccent,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Sobre',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        letterSpacing: 2),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Container(
+                                    height: 2,
+                                    width: 80,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: screenSize.width / 50),
+                            InkWell(
+                              highlightColor: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(1),
+                              hoverColor: Colors.redAccent,
+                              onTap: () {},
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    'Contato',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        letterSpacing: 2),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Container(
+                                    height: 2,
+                                    width: 80,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
-                      ),
-                      SizedBox(width: screenSize.width / 50),
-                      InkWell(
-                        highlightColor: Colors.red,
-                        borderRadius: BorderRadius.circular(1),
-                        hoverColor: Colors.blueAccent,
-                        onTap: () {},
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              'Sobre',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  letterSpacing: 2),
-                            ),
-                            SizedBox(height: 5),
-                            Container(
-                              height: 2,
-                              width: 80,
-                              color: Colors.white,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: screenSize.width / 50),
-                      InkWell(
-                        highlightColor: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(1),
-                        hoverColor: Colors.redAccent,
-                        onTap: () {},
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              'Contato',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  letterSpacing: 2),
-                            ),
-                            SizedBox(height: 5),
-                            Container(
-                              height: 2,
-                              width: 80,
-                              color: Colors.white,
-                            ),
-                          ],
-                        ),
-                      ),
+                      )
                     ],
-                  ),
-                )
-              ],
-            )),
-      ),
+                  )),
+            ),
+      drawer: DrawerTab(),
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -322,16 +341,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(
-             height: screenSize.height * 1.5,
-              width: screenSize.width,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  BottomBar(),
-                ],
-              )
-              ),
-          
+                height: screenSize.height * 1.5,
+                width: screenSize.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    BottomBar(),
+                  ],
+                )),
           ],
         ),
       ),

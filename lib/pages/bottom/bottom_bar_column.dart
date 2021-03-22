@@ -18,13 +18,13 @@ class BottomBarColumn extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 20.0),
       child: Column(
-        //crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             heading,
             style: TextStyle(
               color: Colors.blueGrey[300],
-              fontSize: 18,
+              fontSize: 45,
               fontWeight: FontWeight.w500,
             ),
           ),
